@@ -2,9 +2,9 @@
 
 namespace Doggies
 {
-    public partial class DoggiesPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public DoggiesPage()
+        public MainPage()
         {
             InitializeComponent();
         }

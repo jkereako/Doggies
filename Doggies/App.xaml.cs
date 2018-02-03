@@ -8,7 +8,7 @@ namespace Doggies
         {
             InitializeComponent();
 
-            MainPage = new DoggiesPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
