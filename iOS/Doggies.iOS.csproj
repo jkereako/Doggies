@@ -120,6 +120,22 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SF-UI-Text-Bold.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-BoldItalic.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-Heavy.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-HeavyItalic.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-Light.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-LightItalic.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-Medium.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-MediumItalic.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-Regular.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-RegularItalic.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-Semibold.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-SemiboldItalic.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-Ultrathin.otf" />
+    <BundleResource Include="Resources\SF-UI-Text-UltrathinItalic.otf" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
 </Project>
