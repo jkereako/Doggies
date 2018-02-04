@@ -17,10 +17,16 @@ namespace Doggies
             base.OnAppearing();
 
             var client = new ApiClient();
-
             var breeds = await client.GetMasterBreedsAsync();
+            var viewModels = new List<BreedViewModel>();
 
-            System.Diagnostics.Debug.WriteLine(breeds.ToString());
+            foreach (string breed in breeds)
+            {
+                var viewModel = new BreedViewModel(breed);
+                viewModels.Add(viewModel);
+            }
+
+            breedListView.ItemsSource = viewModels;
         }
     }
 }

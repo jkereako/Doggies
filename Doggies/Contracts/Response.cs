@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Serialization;
+using System.Collections.Generic;
 
 namespace Doggies
 {
@@ -9,6 +10,6 @@ namespace Doggies
         public string Status { get; set; }
 
         [DataMember(Name = "message")]
-        public string[] Message { get; set; }
+        public IEnumerable<string> Message { get; set; }
     }
 }

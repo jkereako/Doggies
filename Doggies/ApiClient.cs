@@ -29,11 +29,10 @@ namespace Doggies
             _client.Dispose();
         }
 
-        public async Task<IEnumerable<String>> GetMasterBreedsAsync()
+        public async Task<IEnumerable<string>> GetMasterBreedsAsync()
         {
             var path = new Uri("breeds/list", UriKind.Relative);
             var response = await GetDogAsync(path);
-
             return response.Message;
         }
 
@@ -48,7 +47,6 @@ namespace Doggies
             // Read the response as a stream. DataContractJsonSerializer requires
             // a stream.
             var contentStream = await response.Content.ReadAsStreamAsync();
-
 
             return Deserialize(contentStream);
         }
