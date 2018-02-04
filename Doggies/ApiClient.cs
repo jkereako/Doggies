@@ -36,6 +36,20 @@ namespace Doggies
             return response.Message;
         }
 
+        public async Task<IEnumerable<string>> GetSubtypeBreedImageAsync(string breed)
+        {
+            var path = new Uri($"breed/{breed}/images/random", UriKind.Relative);
+            var response = await GetDogAsync(path);
+            return response.Message;
+        }
+
+        public async Task<IEnumerable<string>> GetSubtypeBreedsAsync(string breed)
+        {
+            var path = new Uri($"breed/{breed}/list", UriKind.Relative);
+            var response = await GetDogAsync(path);
+            return response.Message;
+        }
+
         private async Task<Response> GetDogAsync(Uri path)
         {
             // Make the request
