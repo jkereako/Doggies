@@ -24,7 +24,9 @@
                     <DataTemplate>
                         <ViewCell>
                             <Label
-                                Text="{Binding Title}" />
+                                Text="{Binding Title}"
+                                TextColor="Black"
+                            />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

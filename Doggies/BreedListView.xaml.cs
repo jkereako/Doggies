@@ -11,5 +11,16 @@ namespace Doggies
         {
             InitializeComponent();
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var client = new ApiClient();
+
+            var breeds = await client.GetMasterBreedsAsync();
+
+            System.Diagnostics.Debug.WriteLine(breeds.ToString());
+        }
     }
 }
