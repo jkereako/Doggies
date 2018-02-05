@@ -47,9 +47,11 @@ namespace Doggies
                 return;
             }
 
-            var viewModel = (BreedViewModel)e.SelectedItem;
+            var viewModel = e.SelectedItem as BreedViewModel;
 
-            DisplayAlert("Item Selected", viewModel.Name, "OK");
+            MessagingCenter.Send<BreedListView, BreedViewModel>(
+                this, "ceo.dog.BreedSelectedNotification", viewModel
+            );
         }
         #endregion Event Handlers
     }
