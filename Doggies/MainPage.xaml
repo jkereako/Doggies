@@ -5,8 +5,7 @@
     xmlns:local="clr-namespace:Doggies"
     x:Class="Doggies.MainPage">
     <MasterDetailPage.Master>
-        <local:BreedListView
-            x:Name="breedListView" />
+        <local:BreedListView />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage>
