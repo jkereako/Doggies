@@ -5,8 +5,11 @@
     x:Class="Doggies.BreedDetailView">
     <ContentPage.Content>
         <Label
-            Text="Hello, world!"
+            Text="Select a breed"
+            x:Name="name"
             Style="{StaticResource TextStyle}"
-            TextColor="Black" />
+            TextColor="Black"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
     </ContentPage.Content>
 </ContentPage>

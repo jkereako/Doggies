@@ -10,7 +10,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <local:BreedDetailView />
+                <local:BreedDetailView x:Name="breedDetailView"/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

@@ -29,9 +29,10 @@ namespace Doggies
 
         void OnBreedSelection(BreedListView sender, BreedViewModel viewModel)
         {
+            // Dismiss the Master view
             IsPresented = false;
 
-            DisplayAlert("Item Selected", viewModel.Name, "OK");
+            breedDetailView.viewModel = viewModel;
         }
     }
 }
