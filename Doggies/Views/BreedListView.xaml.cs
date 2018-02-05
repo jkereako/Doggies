@@ -28,5 +28,29 @@ namespace Doggies
 
             breedListView.ItemsSource = viewModels;
         }
+
+        #region Event Handlers
+        void OnSelection(object sender, SelectedItemChangedEventArgs e)
+        {
+            // Check for deselection
+            if (e.SelectedItem == null)
+            {
+                // ItemSelected is invoked on both selection and deselection.
+                // `e.SelectedItem` is null if the row has been deselected.
+                //
+                // "Be aware that ItemSelected is called both when items are 
+                // deselected and when they are selected. That means you'll need
+                // to check for null SelectedItem in your ItemSelected event 
+                // handler before you can use it:"
+                //
+                // see: https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/interactivity/#Selection_Taps
+                return;
+            }
+
+            var viewModel = (BreedViewModel)e.SelectedItem;
+
+            DisplayAlert("Item Selected", viewModel.Name, "OK");
+        }
+        #endregion Event Handlers
     }
 }

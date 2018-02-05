@@ -10,7 +10,8 @@
             <ListView
                 x:Name="breedListView"
                 RowHeight="60"
-                SeparatorColor="#999999">
+                SeparatorColor="#999999"
+                ItemSelected="OnSelection">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell
