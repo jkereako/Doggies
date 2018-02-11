@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Doggies
+namespace Doggies.Models
 {
     public class Breed
     {

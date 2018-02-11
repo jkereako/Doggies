@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using Doggies.ViewModels;
+using Doggies.Models;
 
 namespace Doggies
 {
