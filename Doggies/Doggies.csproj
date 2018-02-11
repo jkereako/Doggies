@@ -62,6 +62,8 @@
     <Compile Include="Behaviors\ListViewSelectedItemBehavior.cs" />
     <Compile Include="Converters\SelectedItemEventArgsToSelectedItemConverter.cs" />
     <Compile Include="Models\Breed.cs" />
+    <Compile Include="Models\Subtype.cs" />
+    <Compile Include="Models\IName.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

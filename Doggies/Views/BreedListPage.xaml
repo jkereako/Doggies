@@ -30,6 +30,13 @@
                         Command="{Binding RowSelectedCommand}"
                         Converter="{StaticResource SelectedItemConverter}" />
                 </ListView.Behaviors>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding Name}"
+                            TextColor="Red" />
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell

@@ -2,9 +2,10 @@
 
 namespace Doggies.Models
 {
-    public class Breed
+    public class Breed : IName
     {
-        public Breed(string breedName) {
+        public Breed(string breedName)
+        {
             Name = breedName;
         }
 
