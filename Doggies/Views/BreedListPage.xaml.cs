@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace Doggies
 {
-    public partial class BreedListView : ContentPage
+    public partial class BreedListPage : ContentPage
     {
-        public BreedListView()
+        public BreedListPage()
         {
             InitializeComponent();
         }
@@ -16,17 +16,7 @@ namespace Doggies
         {
             base.OnAppearing();
 
-            var client = new ApiClient();
-            var breeds = await client.GetMasterBreedsAsync();
-            var viewModels = new List<BreedViewModel>();
-
-            foreach (string breed in breeds)
-            {
-                var viewModel = new BreedViewModel(breed);
-                viewModels.Add(viewModel);
-            }
-
-            breedListView.ItemsSource = viewModels;
+            await ViewModel.GetBreedsAsync();
         }
 
         #region Event Handlers
@@ -48,11 +38,11 @@ namespace Doggies
             }
 
             var listView = sender as ListView;
-            var viewModel = e.SelectedItem as BreedViewModel;
+            var viewModel = e.SelectedItem as Breed;
 
             // Deselect the row
             listView.SelectedItem = null;
-            MessagingCenter.Send<BreedListView, BreedViewModel>(
+            MessagingCenter.Send<BreedListPage, Breed>(
                 this, "ceo.dog.BreedSelectedNotification", viewModel
             );
         }

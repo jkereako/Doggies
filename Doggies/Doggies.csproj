@@ -33,7 +33,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\BreedListView.xaml">
+    <EmbeddedResource Include="Views\BreedListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -49,13 +49,15 @@
     <Compile Include="Views\BreedDetailView.xaml.cs">
       <DependentUpon>BreedDetailView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\BreedListView.xaml.cs">
-      <DependentUpon>BreedListView.xaml</DependentUpon>
+    <Compile Include="Views\BreedListPage.xaml.cs">
+      <DependentUpon>BreedListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\BreedViewModel.cs" />
+    <Compile Include="ViewModels\Breed.cs" />
+    <Compile Include="ViewModels\BreedListViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

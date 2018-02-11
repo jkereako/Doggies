@@ -1,11 +1,10 @@
 ﻿using System;
 
-
 namespace Doggies
 {
-    public class BreedViewModel
+    public class Breed
     {
-        public BreedViewModel(string breedName) {
+        public Breed(string breedName) {
             Name = breedName;
         }
 

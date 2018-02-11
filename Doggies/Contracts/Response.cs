@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Doggies
 {
-    [DataContract]
+    [DataContract(Namespace = "https://dog.ceo")]
     public class Response
     {
         [DataMember(Name = "status")]

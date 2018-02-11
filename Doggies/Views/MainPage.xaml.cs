@@ -13,7 +13,7 @@ namespace Doggies
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<BreedListView, BreedViewModel>(
+            MessagingCenter.Subscribe<BreedListPage, Breed>(
                 this, "ceo.dog.BreedSelectedNotification", OnBreedSelection
             );
         }
@@ -22,12 +22,12 @@ namespace Doggies
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<BreedListView, BreedViewModel>(
+            MessagingCenter.Unsubscribe<BreedListPage, Breed>(
                 this, "ceo.dog.BreedSelectedNotification"
             );
         }
 
-        void OnBreedSelection(BreedListView sender, BreedViewModel viewModel)
+        void OnBreedSelection(BreedListPage sender, Breed viewModel)
         {
             // Dismiss the Master view
             IsPresented = false;

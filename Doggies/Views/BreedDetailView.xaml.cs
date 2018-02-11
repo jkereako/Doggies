@@ -7,7 +7,7 @@ namespace Doggies
 {
     public partial class BreedDetailView : ContentPage
     {
-        public BreedViewModel viewModel
+        public Breed viewModel
         {
             set
             {

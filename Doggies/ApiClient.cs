@@ -8,9 +8,9 @@ using System.IO;
 
 namespace Doggies
 {
-    public class ApiClient
+    sealed public class ApiClient
     {
-        private HttpClient _client;
+        HttpClient _client;
 
         public ApiClient()
         {
@@ -50,7 +50,7 @@ namespace Doggies
             return response.Message;
         }
 
-        private async Task<Response> GetDogAsync(Uri path)
+        async Task<Response> GetDogAsync(Uri path)
         {
             // Make the request
             var response = await _client.GetAsync(path);
@@ -65,7 +65,7 @@ namespace Doggies
             return Deserialize(contentStream);
         }
 
-        private Response Deserialize(Stream contentStream)
+        Response Deserialize(Stream contentStream)
         {
             var serializer = new DataContractJsonSerializer(typeof(Response));
 
