@@ -38,13 +38,10 @@ namespace Doggies
             }
 
             var listView = sender as ListView;
-            var viewModel = e.SelectedItem as Breed;
 
             // Deselect the row
             listView.SelectedItem = null;
-            MessagingCenter.Send<BreedListPage, Breed>(
-                this, "ceo.dog.BreedSelectedNotification", viewModel
-            );
+           
         }
         #endregion Event Handlers
     }

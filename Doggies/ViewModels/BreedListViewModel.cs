@@ -44,7 +44,11 @@ namespace Doggies.ViewModels
 
         void RowSelected(Breed breed)
         {
-            System.Diagnostics.Debug.WriteLine(breed.Name);
+            // REVIEW: There's gotta be a better way to do this.
+            // Notify the main page.
+            MessagingCenter.Send<BreedListViewModel, Breed>(
+                this, "ceo.dog.BreedSelectedNotification", breed
+           );
         }
     }
 }

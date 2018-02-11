@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Doggies.ViewModels;
 
 namespace Doggies
 {
@@ -13,8 +14,9 @@ namespace Doggies
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<BreedListPage, Breed>(
-                this, "ceo.dog.BreedSelectedNotification", OnBreedSelection
+
+            MessagingCenter.Subscribe<BreedListViewModel, Breed>(
+                this, "ceo.dog.BreedSelectedNotification", PrepareBreedDetailView
             );
         }
 
@@ -22,17 +24,17 @@ namespace Doggies
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<BreedListPage, Breed>(
+            MessagingCenter.Unsubscribe<BreedListViewModel, Breed>(
                 this, "ceo.dog.BreedSelectedNotification"
             );
         }
 
-        void OnBreedSelection(BreedListPage sender, Breed viewModel)
+        void PrepareBreedDetailView(BreedListViewModel sender, Breed breed)
         {
             // Dismiss the Master view
             IsPresented = false;
 
-            breedDetailView.viewModel = viewModel;
+            breedDetailView.viewModel = breed;
         }
     }
 }
