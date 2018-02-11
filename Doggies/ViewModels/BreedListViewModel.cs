@@ -3,6 +3,8 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Doggies.ViewModels
 {
@@ -14,14 +16,17 @@ namespace Doggies.ViewModels
             get { return _breeds; }
         }
 
+        //-- Commands
+        public ICommand RowSelectedCommand { get; }
+
         //-- Private fields
         ObservableCollection<Breed> _breeds;
         ApiClient _client;
 
         public BreedListViewModel()
         {
+            RowSelectedCommand = new Command<Breed>(RowSelected);
             _client = new ApiClient();
-
         }
 
         public async Task GetBreedsAsync()
@@ -35,6 +40,11 @@ namespace Doggies.ViewModels
             SetProperty(ref _breeds, observableBreeds, "Breeds");
 
             return;
+        }
+
+        void RowSelected(Breed breed)
+        {
+            System.Diagnostics.Debug.WriteLine(breed.Name);
         }
     }
 }

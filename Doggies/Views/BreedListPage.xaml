@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:local="using:Doggies"
-	xmlns:viewmodels="clr-namespace:Doggies.ViewModels;assembly=Doggies"
-	x:Class="Doggies.BreedListPage"
-	Title="Master Breeds">
-	<ContentPage.Content>
-		<StackLayout>
-			<StackLayout.BindingContext>
-				<viewmodels:BreedListViewModel x:Name="ViewModel" />
-			</StackLayout.BindingContext>
-			<ListView
-				x:Name="breedListView"
-				RowHeight="60"
-				SeparatorColor="#999999"
-				ItemSelected="OnSelection"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="using:Doggies"
+    xmlns:viewmodels="clr-namespace:Doggies.ViewModels;assembly=Doggies"
+    xmlns:behaviors="clr-namespace:Doggies.Behaviors;assembly=Doggies"
+    xmlns:converters="clr-namespace:Doggies.Converters;assembly=Doggies"
+    x:Class="Doggies.BreedListPage"
+    Title="Master Breeds">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SelectedItemEventArgsToSelectedItemConverter
+                x:Key="SelectedItemConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <viewmodels:BreedListViewModel
+                    x:Name="ViewModel" />
+            </StackLayout.BindingContext>
+            <ListView
+                x:Name="breedListView"
+                RowHeight="60"
+                SeparatorColor="#999999"
                 ItemsSource="{Binding Breeds}">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<TextCell
-							Text="{Binding Name}"
-							TextColor="Black" />
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</StackLayout>
-	</ContentPage.Content>
+                <ListView.Behaviors>
+                    <behaviors:ListViewSelectedItemBehavior
+                        Command="{Binding RowSelectedCommand}"
+                        Converter="{StaticResource SelectedItemConverter}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding Name}"
+                            TextColor="Black" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
